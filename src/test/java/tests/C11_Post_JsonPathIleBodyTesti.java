@@ -1,13 +1,12 @@
+package tests;
+
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
-import org.hamcrest.Matchers;
 import org.json.JSONObject;
 import org.junit.Test;
 
-import java.util.Date;
-
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.*;
+import static org.hamcrest.Matchers.equalTo;
 
 public class C11_Post_JsonPathIleBodyTesti {
 
@@ -67,7 +66,9 @@ public class C11_Post_JsonPathIleBodyTesti {
         Response response=given().contentType(ContentType.JSON)
                           .when().body(requestBody.toString())
                           .post(url);
-        //response.prettyPrint();
+        response.prettyPrint();
+
+        //4-Assertion
 
         response.then().assertThat().statusCode(200)
                 .contentType(ContentType.JSON)
@@ -76,7 +77,11 @@ public class C11_Post_JsonPathIleBodyTesti {
                 .body("booking.totalprice",equalTo(500))
                 .body("booking.depositpaid",equalTo(false))
                 .body("booking.bookingdates.checkin", equalTo("2021-06-01"))
-                .body("booking.bookingdates.checkout", equalTo("2021-06-10"));
+                .body("booking.bookingdates.checkout", equalTo("2021-06-10"))
+                .body("booking.additionalneeds",equalTo("wifi"));
+
+
+
 
 
 
