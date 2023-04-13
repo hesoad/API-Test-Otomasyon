@@ -2,6 +2,9 @@ package TestDatalari;
 
 import org.json.JSONObject;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class TestDataJsonPlaceholder {
 
    public static  int basariliSorgustatusCode=200;
@@ -31,6 +34,46 @@ public class TestDataJsonPlaceholder {
 
         return expectedData;
 
+    }
+    /*
+    Request Body
+        {
+        "title": "Ahmet",
+        "body": "Merhaba",
+        "userId": 10,
+        "id": 70
+        }
+     */
+
+    public static Map<String,Object> mapBodyOlustur(){
+
+        /*
+         Response Body
+        {
+        "status": "success",
+        "data": {
+                "id": 3,
+                "employee_name": "Ashton Cox",
+                "employee_salary": 86000,
+                "employee_age": 66,
+                "profile_image": ""
+                },
+        "message": "Successfully! Record has been fetched."
+        }
+
+         */
+
+        Map<String,Object>bodyMap=new HashMap<>();
+
+        bodyMap.put("title","Ahmet");
+        bodyMap.put("body", "Merhaba");
+        bodyMap.put("userId",10.0);
+        bodyMap.put("id",70.0);
+
+
+
+
+    return bodyMap;
     }
 
 }
