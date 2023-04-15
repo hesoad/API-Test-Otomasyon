@@ -90,8 +90,10 @@ public class C30_Post_Deserialization extends BaseUrlHerokuapp {
      assertEquals(((Map)expectedData.get("booking")).get("lastname"),((Map)responseMap.get("booking")).get("lastname"));
      assertEquals(((Map) expectedData.get("booking")).get("totalprice"),((Map)responseMap.get("booking")).get("totalprice"));
      assertEquals(((Map) expectedData.get("booking")).get("depositpaid"),((Map) responseMap.get("booking")).get("depositpaid"));
-     assertEquals(((Map)((Map) expectedData.get("booking")).get("bookingdates")).get("checkin"),((Map<?, ?>) responseMap.get("booking")).get("booking")
-
+     assertEquals(((Map)((Map) expectedData.get("booking")).get("bookingdates")).get("checkin"),
+             ((Map)((Map) responseMap.get("booking")).get("bookingdates")).get("checkin"));
+     assertEquals(((Map) ((Map) expectedData.get("booking")).get("bookingdates")).get("checkout"),
+             ((Map) ((Map) responseMap.get("booking")).get("bookingdates")).get("checkout"));
 
 
     }

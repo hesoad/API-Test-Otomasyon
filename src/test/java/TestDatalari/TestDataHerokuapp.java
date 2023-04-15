@@ -59,7 +59,7 @@ public class TestDataHerokuapp {
 
         requestBodymap.put("firstname" , "Ahmet");
         requestBodymap.put("lastname" , "Bulut");
-        requestBodymap.put("totalprice" , 500);
+        requestBodymap.put("totalprice" , 500.0);
         requestBodymap.put("depositpaid" , false);
         requestBodymap.put("additionalneeds" ,"wi-fi");
         requestBodymap.put("bookingdates",mapBookingDatesOlustur());
